@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_red_light">
+    <TextClock xmlns:p2="http://xamarin.com/mono/android/designer-default"
+        android:format12Hour="hh:mm:ss a"
+        android:layout_width="match_parent"
+        android:layout_height="47.5dp"
+        android:id="@+id/textClock1"
+        android:gravity="center_horizontal"
+        android:textColor="#ffccff"
+        android:textSize="40sp"
+        android:layout_marginBottom="4.5dp" />
+    <Button
+        android:id="@+id/myButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hello"
+        android:background="@android:drawable/alert_dark_frame" />
+    <Button
+        android:text="Play the Song"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button1"
+        android:background="@android:drawable/alert_dark_frame" />
+    <Button
+        android:text="Stop the Song"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button2"
+        android:background="@android:drawable/alert_dark_frame" />
+    <Button
+        android:text="Volume Up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button3"
+        android:background="@android:drawable/alert_dark_frame" />
+    <Button
+        android:text="Volume Down"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button4"
+        android:background="@android:drawable/alert_dark_frame" />
+</LinearLayout>
