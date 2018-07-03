@@ -40,7 +40,7 @@ namespace SingleScreenApp
             Button btn1 = FindViewById<Button>(Resource.Id.button1);
             btn1.Click += delegate
             {
-                mp = MediaPlayer.Create(this, Resource.Audio.Steve);
+                mp = MediaPlayer.Create(this, Resource.Raw.Animals);
                 mp.Start();
 
                 btn1.Text = "Enjoy the song.";
