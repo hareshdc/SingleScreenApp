@@ -2,20 +2,22 @@
 using Android.Widget;
 using Android.OS;
 using Android.Support.V4.App;
+using Android.Media;
 
 namespace SingleScreenApp
 {
-    [Activity(Label = "SingleScreenApp", MainLauncher = true, Icon = "@mipmap/icon")]
+    [Activity(Label = "Single Screen App", MainLauncher = true, Icon = "@mipmap/icon")]
     public class MainActivity : Activity
     {
         int count = 1;
+        MediaPlayer mp;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             // Set our view from the "main" layout resource
-            SetContentView(Resource.Layout.Main);
+            base.SetContentView(Resource.Layout.Main);
 
             // Get our button from the layout resource,
             // and attach an event to it
@@ -32,6 +34,28 @@ namespace SingleScreenApp
                 var manager = NotificationManagerCompat.From(this);
                 manager.Notify(1, notification);
                 button.Text = "Check Notification!";
+            };
+
+            //Play Song logic.
+            Button btn1 = FindViewById<Button>(Resource.Id.button1);
+            btn1.Click += delegate
+            {
+                mp = MediaPlayer.Create(this, Resource.Audio.Steve);
+                mp.Start();
+
+                btn1.Text = "Enjoy the song.";
+            };
+
+            //stop song logic.
+            Button btn2 = FindViewById<Button>(Resource.Id.button2);
+            btn2.Click += delegate
+            {
+                if (mp != null)
+                    if (mp.IsPlaying)
+                    {
+                        mp.Stop();
+                        btn2.Text = "Song Stopped.";
+                    }
 
             };
         }
