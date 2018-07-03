@@ -3,6 +3,7 @@ using Android.Widget;
 using Android.OS;
 using Android.Support.V4.App;
 using Android.Media;
+using Android.Content;
 
 namespace SingleScreenApp
 {
@@ -57,6 +58,23 @@ namespace SingleScreenApp
                         btn2.Text = "Song Stopped.";
                     }
 
+            };
+
+            //Volume Up
+            AudioManager audios = (AudioManager)GetSystemService(Context.AudioService);
+
+            Button btn3 = FindViewById<Button>(Resource.Id.button3);
+            btn3.Click += delegate
+            {
+                audios.AdjustStreamVolume(Stream.Music,
+                             Adjust.Raise, VolumeNotificationFlags.PlaySound);
+            };
+            //DVolume Down
+            Button btn4 = FindViewById<Button>(Resource.Id.button4);
+            btn4.Click += delegate
+            {
+                audios.AdjustStreamVolume(Stream.Music,
+                             Adjust.Lower, VolumeNotificationFlags.PlaySound);
             };
         }
     }
