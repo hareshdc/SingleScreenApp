@@ -1,6 +1,7 @@
 ﻿using Android.App;
 using Android.Widget;
 using Android.OS;
+using Android.Support.V4.App;
 
 namespace SingleScreenApp
 {
@@ -20,7 +21,19 @@ namespace SingleScreenApp
             // and attach an event to it
             Button button = FindViewById<Button>(Resource.Id.myButton);
 
-            button.Click += delegate { button.Text = string.Format("{0} clicks!", count++); };
+            button.Click += delegate {
+                var notification = new NotificationCompat.Builder(this)
+                            .SetContentTitle("Notifications")
+                            .SetContentText("Clicked " + count++ + " times!")
+
+                            .SetSmallIcon(Android.Resource.Drawable.DialogFrame)
+                            .SetGroup("testGroup").Build();
+
+                var manager = NotificationManagerCompat.From(this);
+                manager.Notify(1, notification);
+                button.Text = "Check Notification!";
+
+            };
         }
     }
 }
