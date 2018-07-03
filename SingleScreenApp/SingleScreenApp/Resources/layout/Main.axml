@@ -3,7 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_red_light">
+    android:background="@android:color/rgb242">
     <TextClock xmlns:p2="http://xamarin.com/mono/android/designer-default"
         android:format12Hour="hh:mm:ss a"
         android:layout_width="match_parent"
