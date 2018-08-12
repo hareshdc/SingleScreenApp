@@ -1,1 +1,1 @@
-# SingleViewApp
+# Single Screen App
